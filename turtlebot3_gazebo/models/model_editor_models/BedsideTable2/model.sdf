@@ -15,7 +15,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://BedsideTable2/meshes/BedsideTable2.stl</uri>
+            <uri>model://BedsideTable2/meshes/BedsideTable2.dae</uri>
           </mesh>
         </geometry>
       </collision>

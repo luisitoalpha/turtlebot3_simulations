@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://VisitorChair/meshes/VisitorChair_Col.obj</uri>
+            <uri>model://VisitorChair/meshes/VisitorChair_Col.dae</uri>
           </mesh>
         </geometry>
       </collision>

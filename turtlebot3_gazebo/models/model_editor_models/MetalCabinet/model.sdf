@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://MetalCabinet/meshes/MetalCabinet.obj</uri>
+            <uri>model://MetalCabinet/meshes/MetalCabinet.dae</uri>
           </mesh>
         </geometry>
       </collision>

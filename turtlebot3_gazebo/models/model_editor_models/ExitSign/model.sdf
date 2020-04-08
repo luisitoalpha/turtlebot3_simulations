@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://ExitSign/meshes/ExitSign.obj</uri>
+            <uri>model://ExitSign/meshes/ExitSign.dae</uri>
           </mesh>
         </geometry>
       </collision>

@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://OpScrubs/meshes/OpScrubs_Col.obj</uri>
+            <uri>model://OpScrubs/meshes/OpScrubs_Col.dae</uri>
           </mesh>
         </geometry>
       </collision>

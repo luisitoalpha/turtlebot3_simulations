@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://Walker/meshes/Walker_Col.obj</uri>
+            <uri>model://Walker/meshes/Walker.dae</uri>
           </mesh>
         </geometry>
       </collision>

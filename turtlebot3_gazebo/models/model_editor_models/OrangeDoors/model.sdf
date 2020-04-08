@@ -14,7 +14,7 @@
 
 			<collision name="collision">
 			<geometry>
-				<mesh><uri>model://OrangeDoors/meshes/door.obj</uri></mesh>
+				<mesh><uri>model://OrangeDoors/meshes/door.dae</uri></mesh>
 			</geometry>
 			</collision>
 

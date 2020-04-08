@@ -13,7 +13,7 @@
 
 			<collision name="collision">
 			  <geometry>
-				<mesh><uri>model://StorageRack/meshes/StorageRack.obj</uri></mesh>
+				<mesh><uri>model://StorageRack/meshes/StorageRack.dae</uri></mesh>
 			  </geometry>
 			</collision>
 

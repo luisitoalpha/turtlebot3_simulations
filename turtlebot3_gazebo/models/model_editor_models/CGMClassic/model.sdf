@@ -17,7 +17,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://CGMClassic/meshes/CGMClassic.obj</uri>
+            <uri>model://CGMClassic/meshes/CGMClassic.dae</uri>
             <scale>0.01 0.01 0.01</scale>
           </mesh>
         </geometry>

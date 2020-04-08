@@ -17,7 +17,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://ElectronicsRecycling/meshes/bin.obj</uri>
+            <uri>model://ElectronicsRecycling/meshes/bin.dae</uri>
           </mesh>
         </geometry>
       </collision>

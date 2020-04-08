@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://InstrumentCart1/meshes/InstrumentCart1.obj</uri>
+            <uri>model://InstrumentCart1/meshes/InstrumentCart1.dae</uri>
           </mesh>
         </geometry>
       </collision>

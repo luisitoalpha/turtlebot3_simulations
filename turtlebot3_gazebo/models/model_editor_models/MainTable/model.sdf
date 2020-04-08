@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://MainTable/meshes/MainTable.obj</uri>
+            <uri>model://MainTable/meshes/MainTable.dae</uri>
           </mesh>
         </geometry>
       </collision>

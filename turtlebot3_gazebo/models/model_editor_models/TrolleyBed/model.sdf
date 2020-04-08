@@ -13,7 +13,7 @@
 
 			<collision name="collision">
 			  <geometry>
-				<mesh><uri>model://TrolleyBed/meshes/TrolleyBed.obj</uri></mesh>
+				<mesh><uri>model://TrolleyBed/meshes/TrolleyBed.dae</uri></mesh>
 			  </geometry>
 			</collision>
 

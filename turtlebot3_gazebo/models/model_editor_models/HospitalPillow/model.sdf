@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://HospitalPillow/meshes/HospitalPillow_Col.obj</uri>
+            <uri>model://HospitalPillow/meshes/HospitalPillow.dae</uri>
           </mesh>
         </geometry>
       </collision>

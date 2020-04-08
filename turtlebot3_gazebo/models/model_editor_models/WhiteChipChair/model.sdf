@@ -13,7 +13,7 @@
 
 			<collision name="collision">
 			  <geometry>
-				<mesh><uri>model://WhiteChipChair/meshes/WhiteChipChair.obj</uri></mesh>
+				<mesh><uri>model://WhiteChipChair/meshes/WhiteChipChair.dae</uri></mesh>
 			  </geometry>
 			</collision>
 
