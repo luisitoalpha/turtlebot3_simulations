@@ -13,6 +13,7 @@
       </attenuation>
       <direction>-0.5 0.1 -0.9</direction>
     </light>
+
     <model name='ground_plane'>
       <static>1</static>
       <link name='link'>
@@ -59,6 +60,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
+
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
@@ -79,6 +81,119 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
+
+     <model name="human_1_collision_model">
+      <!-- <pose>0 0 -100 0 0 0</pose> -->
+      <static>true</static>
+      <link name="link">
+        <collision name="link">
+          <pose>0 -0.18 0.05 0 -1.5707963267948966 0</pose>
+          <geometry>
+            <box>
+              <size>0.44 1.62 0.60</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <actor name="human_1">
+      <!-- Starting pose, nice for when the world is reset -->
+      <pose>0 0 1.0 1.570796 -0.0 3.141593</pose>
+      <skin>
+        <filename>model://actor/meshes/SKIN_man_red_shirt.dae</filename>
+      </skin>
+      <animation name="animation">
+        <filename>model://actor/meshes/ANIMATION_walking.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <!-- Predefined Trajectory -->
+      <plugin name="trajectory" filename="libTrajectoryActorPlugin.so">     
+          <target> 0 0 1.0 1.570796 -0.0 3.141593</target>
+          <target> 3 0 1.0 1.570796 -0.0 3.141593</target>
+          <target> 3 -1.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> 3 0 1.0 1.570796 -0.0 3.141593</target>
+          <target> 6 0 1.0 1.570796 -0.0 3.141593</target>
+          <target> 6 -7 1.0 1.570796 -0.0 3.141593</target>
+          <target> 3 -7 1.0 1.570796 -0.0 3.141593</target>
+          <target> 3 -5.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> 3 -7 1.0 1.570796 -0.0 3.141593</target>
+          <target> -6.9 -7 1.0 1.570796 -0.0 3.141593</target>
+          <target> -6.9 -5 1.0 1.570796 -0.0 3.141593</target>
+          <target> -5.5 -5 1.0 1.570796 -0.0 3.141593</target>
+          <target> -6.9 -5 1.0 1.570796 -0.0 3.141593</target>
+          <target> -6.9 0 1.0 1.570796 -0.0 3.141593</target>
+        <velocity>1.2</velocity>
+      </plugin>
+      <!-- Enable collisions -->
+        <plugin name="attach_model" filename="libAttachModelPlugin.so">
+          <link>
+            <link_name>human_1_pose</link_name>
+            <model>
+              <model_name>human_1_collision_model</model_name>
+            </model>
+          </link>
+        </plugin>
+    </actor>
+
+    <model name="human_2_collision_model">
+      <pose>0 0 1.0 1.570796 -0.0 3.141593</pose>
+      <static>true</static>
+      <link name="human_2_pose">
+        <collision name="link">
+          <pose>0 -0.18 0.05 0 -1.5707963267948966 0</pose>
+          <geometry>
+            <box>
+              <size>0.44 1.62 0.60</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <actor name="human_2">
+      <!-- Starting pose, nice for when the world is reset -->
+      <pose>-2 5 1.0 1.570796 -0.0 3.141593</pose>
+      <skin>
+        <filename>model://actor/meshes/SKIN_man_green_shirt.dae</filename>
+      </skin>
+      <animation name="animation">
+        <filename>model://actor/meshes/ANIMATION_walking.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <!-- Predefined Trajectory -->
+      <plugin name="trajectory" filename="libTrajectoryActorPlugin.so">     
+          <target> -2 5 1.0 1.570796 -0.0 3.141593</target>
+          <target> -2 3.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> 3.5 3.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> 3.5 6.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> 3.5 3.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> 0.5 3.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> 0.2 0.9 1.0 1.570796 -0.0 3.141593</target>
+          <target> -7.3 0.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> -7.3 3 1.0 1.570796 -0.0 3.141593</target>
+          <target> -10 3 1.0 1.570796 -0.0 3.141593</target>
+          <target> -10 6.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> -10 3 1.0 1.570796 -0.0 3.141593</target>
+          <target> -7.3 3 1.0 1.570796 -0.0 3.141593</target>
+          <target> -7.3 0.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> 0.2 0.9 1.0 1.570796 -0.0 3.141593</target>  
+          <target> 0.5 3.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> -2 3.5 1.0 1.570796 -0.0 3.141593</target>
+          <target> -2 5 1.0 1.570796 -0.0 3.141593</target>
+        <velocity>1.2</velocity>
+      </plugin>
+      <!-- Enable collisions -->
+        <plugin name="attach_model" filename="libAttachModelPlugin.so">
+          <link>
+            <link_name>human_2_pose</link_name>
+            <model>
+              <model_name>human_2_collision_model</model_name>
+            </model>
+          </link>
+        </plugin>
+    </actor>
+
     <model name='OperationRooms'>
       <pose frame=''>-2.55884 0.239948 0 0 -0 0</pose>
       <link name='Wall_0'>
@@ -2840,6 +2955,7 @@
       </link>
       <static>1</static>
     </model>
+
     <model name='TrolleyBed'>
       <static>1</static>
       <link name='link'>
@@ -2876,6 +2992,7 @@
       </link>
       <pose frame=''>-0.444236 -4.64318 0 0 -0 0</pose>
     </model>
+
     <model name='TrolleyBedPatient'>
       <static>1</static>
       <link name='body'>
@@ -2912,6 +3029,7 @@
       </link>
       <pose frame=''>1.93294 -4.78281 0 0 -0 0</pose>
     </model>
+
     <model name='TrolleyBedPatient'>
       <static>1</static>
       <link name='body'>
@@ -2948,6 +3066,7 @@
       </link>
       <pose frame=''>1.93294 -4.78281 0 0 -0 0</pose>
     </model>
+
     <model name='TrolleyBed_clone'>
       <static>1</static>
       <link name='link'>
@@ -2984,6 +3103,7 @@
       </link>
       <pose frame=''>-0.437447 -1.086 0 0 -0 0</pose>
     </model>
+
     <model name='TrolleyBedPatient_clone'>
       <static>1</static>
       <link name='body'>
@@ -3020,6 +3140,7 @@
       </link>
       <pose frame=''>1.92687 -0.959244 0 0 -0 0</pose>
     </model>
+
     <model name='PatientWheelChair'>
       <static>1</static>
       <link name='body'>
@@ -3056,6 +3177,7 @@
       </link>
       <pose frame=''>-1.44838 -4.23035 0 0 -0 0</pose>
     </model>
+
     <model name='BedsideTable2'>
       <static>1</static>
       <link name='body'>
@@ -3092,6 +3214,7 @@
       </link>
       <pose frame=''>0.216834 -3.73176 0 0 -0 0</pose>
     </model>
+
     <model name='BedsideTable2_0'>
       <static>1</static>
       <link name='body'>
@@ -3128,6 +3251,7 @@
       </link>
       <pose frame=''>2.71652 -3.72637 0 0 -0 0</pose>
     </model>
+
     <model name='BedsideTable2_0_clone'>
       <static>1</static>
       <link name='body'>
@@ -3164,6 +3288,7 @@
       </link>
       <pose frame=''>0.861805 -2.87228 0 0 -0 0</pose>
     </model>
+
     <model name='BedsideTable2_0_clone_0'>
       <static>1</static>
       <link name='body'>
@@ -3200,6 +3325,7 @@
       </link>
       <pose frame=''>-1.42623 -2.85848 0 0 -0 0</pose>
     </model>
+
     <model name='person_standing'>
       <link name='link'>
         <inertial>
@@ -3269,6 +3395,7 @@
       </link>
       <pose frame=''>3.20278 -4.18787 0 0 -0 0</pose>
     </model>
+
     <model name='person_standing_clone'>
       <link name='link'>
         <inertial>
@@ -3338,6 +3465,7 @@
       </link>
       <pose frame=''>3.12231 -2.63437 -0 1e-06 -1e-06 -0.000132</pose>
     </model>
+
     <model name='OrangeDoors'>
       <static>1</static>
       <link name='body'>
@@ -3374,6 +3502,7 @@
       </link>
       <pose frame=''>-0.4403 1.51248 0 0 -0 0</pose>
     </model>
+
     <model name='OrangeDoors_0'>
       <static>1</static>
       <link name='body'>
@@ -3410,6 +3539,7 @@
       </link>
       <pose frame=''>-7.9368 1.55951 0 0 -0 0</pose>
     </model>
+
     <model name='OrangeDoors_1'>
       <static>1</static>
       <link name='body'>
@@ -3446,6 +3576,7 @@
       </link>
       <pose frame=''>-3.5614 0.355078 0 0 -0 0</pose>
     </model>
+
     <model name='OrangeDoors_1_clone'>
       <static>1</static>
       <link name='body'>
@@ -3482,6 +3613,7 @@
       </link>
       <pose frame=''>0.67035 1.26972 0 0 0 -1.5647</pose>
     </model>
+
     <model name='CGMClassic'>
       <static>1</static>
       <link name='body'>
@@ -3520,6 +3652,7 @@
       </link>
       <pose frame=''>-7.08922 5.90529 0 0 -0 0</pose>
     </model>
+
     <model name='CGMClassic_0'>
       <static>1</static>
       <link name='body'>
@@ -3558,6 +3691,7 @@
       </link>
       <pose frame=''>1.83212 5.99388 0 0 -0 0</pose>
     </model>
+
     <model name='OpScrubs'>
       <static>1</static>
       <link name='body'>
@@ -3594,6 +3728,7 @@
       </link>
       <pose frame=''>-5.58316 7.78552 0 0 -0 0</pose>
     </model>
+
     <model name='OpScrubs_0'>
       <static>1</static>
       <link name='body'>
@@ -3630,6 +3765,7 @@
       </link>
       <pose frame=''>-8.43744 7.8571 0 0 -0 0</pose>
     </model>
+
     <model name='OpScrubs_1'>
       <static>1</static>
       <link name='body'>
@@ -4499,6 +4635,9 @@
       <real_time>1641 444854</real_time>
       <wall_time>1586429817 262104653</wall_time>
       <iterations>1578761</iterations>
+
+      
+
       <model name='BedsideTable2'>
         <pose frame=''>0.216834 -3.73176 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -5081,4 +5220,5 @@
       </camera>
     </gui>
   </world>
+
 </sdf>
