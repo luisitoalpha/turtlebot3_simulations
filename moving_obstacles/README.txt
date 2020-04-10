@@ -1,4 +1,5 @@
-terminal 1: roscore
-terminal 2: rosrun gazebo_ros gazebo
-terminal 3: roslaunch moving_obstacles spawn_person.launch
-terminal 4: rosrun moving_obstacles model_state.py
+First run the following command:
+<export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/catkin_ws/src/turtlebot3_simulations/moving_obstacles/worlds/build>
+
+Then in the same terminal run launch file:
+<roslaunch turtlebot3_gazebo turtlebot3_world.launch>
