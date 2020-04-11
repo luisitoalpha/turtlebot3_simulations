@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/christos/catkin_ws/src/turtlebot3_simulations/moving_obstacles/worlds/TrajectoryActorPlugin.cc" "/home/christos/catkin_ws/src/turtlebot3_simulations/moving_obstacles/worlds/build/CMakeFiles/TrajectoryActorPlugin.dir/TrajectoryActorPlugin.cc.o"
+  "/home/luis/catkin_ws/src/turtlebot3_simulations/moving_obstacles/worlds/TrajectoryActorPlugin.cc" "/home/luis/catkin_ws/src/turtlebot3_simulations/moving_obstacles/worlds/build/CMakeFiles/TrajectoryActorPlugin.dir/TrajectoryActorPlugin.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "LIBBULLET_VERSION=2.87"
+  "LIBBULLET_VERSION=2.83"
   "LIBBULLET_VERSION_GT_282"
   )
 
@@ -19,7 +19,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/gazebo-9"
   "/usr/include/bullet"
   "/usr/include/simbody"
-  "/usr/include/sdformat-6.0"
+  "/usr/include/sdformat-6.2"
   "/usr/include/ignition/math4"
   "/usr/include/OGRE"
   "/usr/include/OGRE/Terrain"
