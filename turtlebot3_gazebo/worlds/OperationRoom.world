@@ -82,23 +82,49 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
 
-     <model name="human_1_collision_model">
-      <!-- <pose>0 0 -100 0 0 0</pose> -->
-      <static>true</static>
-      <link name="link">
-        <collision name="link">
-          <pose>0 -0.18 0.05 0 -1.5707963267948966 0</pose>
-          <geometry>
-            <box>
-              <size>0.44 1.62 0.60</size>
-            </box>
-          </geometry>
-        </collision>
-      </link>
+
+    <model name="human_1_collision_model">
+     <link name="link">
+      <collision name="leg_1">
+        <pose>-0.15 -0.5 0.2 1.57 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.08</radius>
+            <length>0.9</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="leg_2">
+        <pose>0.15 -0.5 0.2 1.57 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.08</radius>
+            <length>0.9</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <!-- <visual name="leg_1">
+        <pose>-0.15 -0.5 0.2 1.57 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.08</radius>
+            <length>0.9</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="leg_2">
+        <pose>0.15 -0.5 0.2 1.57 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.08</radius>
+            <length>0.9</length>
+          </cylinder>
+        </geometry>
+      </visual> -->
+     </link>
     </model>
 
     <actor name="human_1">
-      <!-- Starting pose, nice for when the world is reset -->
       <pose>0 0 1.0 1.570796 -0.0 3.141593</pose>
       <skin>
         <filename>model://actor/meshes/SKIN_man_red_shirt.dae</filename>
@@ -107,7 +133,6 @@
         <filename>model://actor/meshes/ANIMATION_walking.dae</filename>
         <interpolate_x>true</interpolate_x>
       </animation>
-      <!-- Predefined Trajectory -->
       <plugin name="trajectory" filename="libTrajectoryActorPlugin.so">     
           <target> 0 0 1.0 1.570796 -0.0 3.141593</target>
           <target> 3 0 1.0 1.570796 -0.0 3.141593</target>
@@ -123,9 +148,8 @@
           <target> -5.5 -5 1.0 1.570796 -0.0 3.141593</target>
           <target> -6.9 -5 1.0 1.570796 -0.0 3.141593</target>
           <target> -6.9 0 1.0 1.570796 -0.0 3.141593</target>
-        <velocity>1.2</velocity>
+        <velocity>0.35</velocity>
       </plugin>
-      <!-- Enable collisions -->
         <plugin name="attach_model" filename="libAttachModelPlugin.so">
           <link>
             <link_name>human_1_pose</link_name>
@@ -134,25 +158,56 @@
             </model>
           </link>
         </plugin>
+      <plugin name="actor_01_odometry_spine" filename="libgazebo_ros_p3d.so">
+        <updateRate>100.0</updateRate>
+        <bodyName>human_1_pose</bodyName>
+        <topicName>actor_01_pose</topicName>
+        <frameName>map</frameName>
+      </plugin>
     </actor>
 
     <model name="human_2_collision_model">
-      <pose>0 0 1.0 1.570796 -0.0 3.141593</pose>
-      <static>true</static>
-      <link name="human_2_pose">
-        <collision name="link">
-          <pose>0 -0.18 0.05 0 -1.5707963267948966 0</pose>
-          <geometry>
-            <box>
-              <size>0.44 1.62 0.60</size>
-            </box>
-          </geometry>
-        </collision>
-      </link>
+     <link name="link">
+      <collision name="leg_1">
+        <pose>-0.2 -0.5 0.2 1.57 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.06</radius>
+            <length>0.9</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="leg_2">
+        <pose>0.2 -0.5 0.2 1.57 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.06</radius>
+            <length>0.9</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <!-- <visual name="leg_1">
+        <pose>-0.2 -0.5 0.2 1.57 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.07</radius>
+            <length>0.9</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="leg_2">
+        <pose>0.2 -0.5 0.2 1.57 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.07</radius>
+            <length>0.9</length>
+          </cylinder>
+        </geometry>
+      </visual> -->
+     </link>
     </model>
 
     <actor name="human_2">
-      <!-- Starting pose, nice for when the world is reset -->
       <pose>-2 5 1.0 1.570796 -0.0 3.141593</pose>
       <skin>
         <filename>model://actor/meshes/SKIN_man_green_shirt.dae</filename>
@@ -161,7 +216,6 @@
         <filename>model://actor/meshes/ANIMATION_walking.dae</filename>
         <interpolate_x>true</interpolate_x>
       </animation>
-      <!-- Predefined Trajectory -->
       <plugin name="trajectory" filename="libTrajectoryActorPlugin.so">     
           <target> -2 5 1.0 1.570796 -0.0 3.141593</target>
           <target> -2 3.5 1.0 1.570796 -0.0 3.141593</target>
@@ -181,9 +235,8 @@
           <target> 0.5 3.5 1.0 1.570796 -0.0 3.141593</target>
           <target> -2 3.5 1.0 1.570796 -0.0 3.141593</target>
           <target> -2 5 1.0 1.570796 -0.0 3.141593</target>
-        <velocity>1.2</velocity>
+        <velocity>0.35</velocity>
       </plugin>
-      <!-- Enable collisions -->
         <plugin name="attach_model" filename="libAttachModelPlugin.so">
           <link>
             <link_name>human_2_pose</link_name>
@@ -192,6 +245,12 @@
             </model>
           </link>
         </plugin>
+      <plugin name="actor_02_odometry_spine" filename="libgazebo_ros_p3d.so">
+        <updateRate>100.0</updateRate>
+        <bodyName>human_2_pose</bodyName>
+        <topicName>actor_02_pose</topicName>
+        <frameName>map</frameName>
+      </plugin>
     </actor>
 
     <model name='OperationRooms'>
